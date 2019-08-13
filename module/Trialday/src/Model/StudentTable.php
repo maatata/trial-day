@@ -70,7 +70,6 @@ class StudentTable
     }
 
     public function getClasses() {
-        $result = $this->fetchAll();
         $classes = array();
         for($i = 1; $i <= 3; $i++) {
             $classes[$i] = 'Class ' . $i;
