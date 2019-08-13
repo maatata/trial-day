@@ -1,0 +1,31 @@
+<?php
+// module/Job/view/job/job/index.phtml:
+
+$title = 'Jobs';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('task3', ['action' => 'add']) ?>">Add new job</a> | 
+    <a href="<?= $this->url('task3', ['action' => 'export']) ?>">Export jobs</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Company</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($jobs as $job) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($job->name) ?></td>
+        <td><?= $this->escapeHtml($job->description) ?></td>
+        <td><?= $this->escapeHtml($job->company) ?></td>
+        <td>
+            <a href="<?= $this->url('task3', ['action' => 'edit', 'id' => $job->id]) ?>">Edit</a>
+            <a href="<?= $this->url('task3', ['action' => 'delete', 'id' => $job->id]) ?>">Delete</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>

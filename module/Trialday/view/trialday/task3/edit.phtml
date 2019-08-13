@@ -1,0 +1,51 @@
+<?php
+$title = 'Edit Job';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+$job = $form->get('name');
+$job->setAttribute('class', 'form-control');
+$job->setAttribute('placeholder', 'Album title');
+
+$description = $form->get('description');
+$description->setAttribute('class', 'form-control');
+$description->setAttribute('placeholder', 'Description');
+
+$company = $form->get('company');
+$company->setAttribute('class', 'form-control');
+$company->setAttribute('placeholder', 'Company');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('task3', [
+    'action' => 'edit',
+    'id'     => $id,
+]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<div class="form-group">
+    <?= $this->formLabel($job) ?>
+    <?= $this->formElement($job) ?>
+    <?= $this->formElementErrors()->render($job, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($description) ?>
+    <?= $this->formElement($description) ?>
+    <?= $this->formElementErrors()->render($description, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($company) ?>
+    <?= $this->formElement($company) ?>
+    <?= $this->formElementErrors()->render($company, ['class' => 'help-block']) ?>
+</div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();

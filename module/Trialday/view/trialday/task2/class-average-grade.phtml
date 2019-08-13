@@ -1,0 +1,25 @@
+<?php
+// module/Trialday/view/trialday/task2/index.phtml:
+
+$title = 'Class Average Grade';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('task2', ['action' => 'add']) ?>">Add new student</a> | 
+    <a href="<?= $this->url('task2', ['action' => 'student-average-grade']) ?>">Students Average Grade</a> | 
+    <a href="<?= $this->url('task2', ['action' => 'overall-average-grade']) ?>">Overall Average Grade</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Class Name</th>
+    <th>Average Grade</th>
+</tr>
+<?php foreach ($classes as $class) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($class->class_name) ?></td>
+        <td><?= $this->escapeHtml($class->average_grade) ?></td>
+    </tr>
+<?php endforeach; ?>
+</table>

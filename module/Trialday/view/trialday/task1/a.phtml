@@ -1,0 +1,14 @@
+<?php
+// module/Trialday/view/trialday/task1/a.phtml:
+
+$title = 'Task 1 - a';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<h4>The elements of file1.txt first and then the elements of file2.csv</h4>
+
+<p>
+	<?php foreach ($result as $number) : ?>
+	<div><?= $this->escapeHtml($number) ?></div>
+	<?php endforeach; ?>
+</p>

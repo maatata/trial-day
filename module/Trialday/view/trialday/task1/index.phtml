@@ -1,0 +1,12 @@
+<?php
+// module/Trialday/view/trialday/task1/index.phtml:
+
+$title = 'Task 1 options';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<ul>
+    <li><a href="<?= $this->url('task1', ['action' => 'a']) ?>">a) The elements of file1.txt first and then the elements of file2.csv</a></li>
+    <li><a href="<?= $this->url('task1', ['action' => 'b']) ?>">b) The elements of both files in ascending order</a></li>
+    <li><a href="<?= $this->url('task1', ['action' => 'c']) ?>">c) The intersection of the elements of both files</a></li>
+</ul>

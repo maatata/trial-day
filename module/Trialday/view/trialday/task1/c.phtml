@@ -1,0 +1,14 @@
+<?php
+// module/Trialday/view/trialday/task1/c.phtml:
+
+$title = 'Task 1 - c';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<h4>The intersection of the elements of both files</h4>
+
+<p>
+	<?php foreach ($result as $number) : ?>
+	<div><?= $this->escapeHtml($number) ?></div>
+	<?php endforeach; ?>
+</p>
